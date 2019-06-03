@@ -20,8 +20,6 @@ int  getdata();
 int  checksr(int);
 int t(void);
 
-void issuerecord();
-void loaderanim();
 
 //global files to be accessed in program
 FILE *fp,*ft,*fs;
@@ -74,7 +72,7 @@ printf("\xDB\xDB\xDB\xDB\xB2 2. View Older Players");
 gotoxy(20,9);
 printf("\xDB\xDB\xDB\xDB\xB2 3. Exit"); 
 gotoxy(20,11);
-printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 gotoxy(20,13);
 t();
 gotoxy(20,19);
@@ -119,7 +117,7 @@ void addplayers(void)    //funtion that adds players
 system("cls");
 int i;
 gotoxy(20,5);
-printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2SELECT CATEGORIES\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2SELECT A GUILD\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 gotoxy(20,7);
 printf("\xDB\xDB\xDB\xDB\xB2 1. Warrior");
 gotoxy(20,9);
@@ -153,36 +151,37 @@ fclose(fp);
 gotoxy(21,14);
 printf("The character is sucessfully saved");
         gotoxy(21,15);
-        printf("Start Game?(Y / N):");                                                             // make game here
+        printf("Start Game?(Y / N):");                                                            
         if(getch()=='n')
         mainmenu();
         else
-        system("cls");
+        system("cls");                                                                       // make game here
         addplayers();
         }
 }
 
 void viewplayers(void)  //show list of players
 {
-int i=0,j;
+int i=0,j,sr=1;
 system("cls");
 gotoxy(1,1);
-printf("***************************Adventurers Before You***************************");
+printf("***********************Adventurers Before You***********************");
 gotoxy(20,2);
-printf("Guild           SNo.           NAME");
+printf("SNo.          Guild           NAME");
 j=4;
 fp=fopen("playerdata.dat","rb");
 while(fread(&a,sizeof(a),1,fp)==1)
 {
 gotoxy(20,j);
+printf("%d",sr);
+gotoxy(34,j);
 printf("%s",a.cat);
-gotoxy(36,j);
-printf("%d",a.id);
-gotoxy(44,j);
+gotoxy(50,j);
 printf("%s",a.name);
 printf("\n\n");
 j++;
 i=j-4;
+sr=j-3;
 }
 gotoxy(3,25);
 printf("Total Players = %d",i);
@@ -217,31 +216,14 @@ printf("\xB2");gotoxy(46,8);printf("\xB2");
 gotoxy(20,9);
 printf("\xB2");gotoxy(46,9);printf("\xB2");
 gotoxy(20,10);
-printf("\xB2");gotoxy(46,10);printf("\xB2");
-gotoxy(20,11);
-printf("\xB2");gotoxy(46,11);printf("\xB2");
-gotoxy(20,12);
 printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 gotoxy(21,6);
 printf("Guild:");
 gotoxy(31,6);
 printf("%s",catagories[s-1]);
 gotoxy(21,8);
-printf("Serial No.:\t");
-gotoxy(32,8);
-scanf("%d",&t);
-if(checksr(t) == 0)
-{
-gotoxy(21,13);
-printf("\aThis SNo. already exists\a");
-getch();
-getdata();
-return 0;
-}
-a.id=t;
-gotoxy(21,10);
 printf("Player Name:");
-gotoxy(33,10);
+gotoxy(33,8);
 scanf("%s",a.name);
 return 1;
 }
