@@ -13,8 +13,12 @@ char catagories[][15]={"Warrior","Mage","Thief","Archer","Engineer","Paladin"};
 void returnfunc(void);
 void mainmenu(void);
 void addplayers(void);
-void searchplayers(void);
 void viewplayers(void);
+
+void page1(void);                       //pages for game
+void page2_1(void);
+void page2_2(void);
+
 void closeapplication(void);
 int  getdata();
 int  checksr(int);
@@ -63,7 +67,7 @@ system("cls");
 
 int i;
 gotoxy(20,3);
-printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xDB A Mercenary in Tamriel \xDB\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
+printf("\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xDB A Mercenary in Pinebreak \xDB\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2\xB2");
 
 gotoxy(20,5);
 printf("\xDB\xDB\xDB\xDB\xB2 1. Start Game   "); 
@@ -155,8 +159,8 @@ printf("The character is sucessfully saved");
         if(getch()=='n')
         mainmenu();
         else
-        system("cls");                                                                       // make game here
-        addplayers();
+        system("cls");                                                           
+        page1();
         }
 }
 
@@ -243,5 +247,166 @@ printf("\t%s\n",ctime(&t));
 
 return 0 ;
 }
+//Game content starts here
+
+void page1(void){
+
+        system("cls");
+        gotoxy(10,3);printf("Page 1, Welcome to Pinebreak");
+        gotoxy(10,4);
+        for(int i=0; i<81; i++){printf("\xB2");}                //printing outline of the textbox
+        gotoxy(10,5);
+        printf("\xB2");gotoxy(90,5);printf("\xB2");
+        gotoxy(10,6);
+        printf("\xB2");gotoxy(90,6);printf("\xB2");
+        gotoxy(10,7);
+        printf("\xB2");gotoxy(90,7);printf("\xB2");
+        gotoxy(10,8);
+        printf("\xB2");gotoxy(90,8);printf("\xB2");
+        gotoxy(10,9);
+        printf("\xB2");gotoxy(90,9);printf("\xB2");
+        gotoxy(10,10);
+        printf("\xB2");gotoxy(90,10);printf("\xB2");
+        gotoxy(10,11);
+        printf("\xB2");gotoxy(90,11);printf("\xB2");
+        gotoxy(10,12);
+        printf("\xB2");gotoxy(90,12);printf("\xB2");
+        gotoxy(10,13);
+        printf("\xB2");gotoxy(90,13);printf("\xB2");
+        gotoxy(10,14);
+        printf("\xB2");gotoxy(90,14);printf("\xB2");
+        gotoxy(10,15);
+        printf("\xB2");gotoxy(90,15);printf("\xB2");
+        gotoxy(10,16);
+        for(int i=0; i<81; i++){printf("\xB2");}
+        gotoxy(12,6);
+        printf("'Don't start any trouble merc, we don't take kindly to your kind around here.'\n");
+        gotoxy(12,7);
+        printf("Said the guard looking at me as I entered Relisia's biggest city, Pinebreak.\n");
+        gotoxy(12,8);
+        printf("Little does he know you are here on a contract for the Emperor's head.\n");
+        gotoxy(12,10);
+        printf("You decide to:\n");
+        gotoxy(12,11);
+        printf("1. Go to the Armory on your right\n");
+        gotoxy(12,12);
+        printf("2. Taunt the Guard\n");
+        gotoxy(12,14);
+        printf("Choose an option:");                                                            
+        if(getch()=='1')
+        page2_1();
+        else
+        system("cls");                                                    
+        page2_2();
+        
+}
+
+void page2_1(void){
+
+        system("cls");
+        gotoxy(10,3);printf("Page 2_1, Pinebreak Armory");
+        gotoxy(10,4);
+        for(int i=0; i<81; i++){printf("\xB2");}                //printing outline of the textbox
+        gotoxy(10,5);
+        printf("\xB2");gotoxy(90,5);printf("\xB2");
+        gotoxy(10,6);
+        printf("\xB2");gotoxy(90,6);printf("\xB2");
+        gotoxy(10,7);
+        printf("\xB2");gotoxy(90,7);printf("\xB2");
+        gotoxy(10,8);
+        printf("\xB2");gotoxy(90,8);printf("\xB2");
+        gotoxy(10,9);
+        printf("\xB2");gotoxy(90,9);printf("\xB2");
+        gotoxy(10,10);
+        printf("\xB2");gotoxy(90,10);printf("\xB2");
+        gotoxy(10,11);
+        printf("\xB2");gotoxy(90,11);printf("\xB2");
+        gotoxy(10,12);
+        printf("\xB2");gotoxy(90,12);printf("\xB2");
+        gotoxy(10,13);
+        printf("\xB2");gotoxy(90,13);printf("\xB2");
+        gotoxy(10,14);
+        printf("\xB2");gotoxy(90,14);printf("\xB2");
+        gotoxy(10,15);
+        printf("\xB2");gotoxy(90,15);printf("\xB2");
+        gotoxy(10,16);
+        for(int i=0; i<81; i++){printf("\xB2");}
+        gotoxy(12,6);
+        printf("You enter the stone building with steel swords and axes hung on the walls.\n");
+        gotoxy(12,7);
+        printf("In front of you is the owner and a smith working the anvil with a sword.\n");
+        gotoxy(12,8);
+        printf("He asks, 'What do you need weary traveller? I can patch that sword for you.'\n");
+        gotoxy(12,10);
+        printf("You say:\n");
+        gotoxy(12,11);
+        printf("1. My sword's fine, I am here for some information.\n");
+        gotoxy(12,12);
+        printf("2. Fix my sword for me, it has grown dull along the journey.\n");
+        gotoxy(12,13);
+        printf("3. Show me what you have for sale.\n");
+        gotoxy(12,14);
+        printf("Choose an option:");                                                            
+        if(getch()=='1')
+        mainmenu();
+        else
+        system("cls");                                                                       // make game here
+        mainmenu();
+        
+}
+
+void page2_2(void){
+
+        system("cls");
+        gotoxy(10,3);printf("Page 2_2, The annoying city watch");
+        gotoxy(10,4);
+        for(int i=0; i<81; i++){printf("\xB2");}                //printing outline of the textbox
+        gotoxy(10,5);
+        printf("\xB2");gotoxy(90,5);printf("\xB2");
+        gotoxy(10,6);
+        printf("\xB2");gotoxy(90,6);printf("\xB2");
+        gotoxy(10,7);
+        printf("\xB2");gotoxy(90,7);printf("\xB2");
+        gotoxy(10,8);
+        printf("\xB2");gotoxy(90,8);printf("\xB2");
+        gotoxy(10,9);
+        printf("\xB2");gotoxy(90,9);printf("\xB2");
+        gotoxy(10,10);
+        printf("\xB2");gotoxy(90,10);printf("\xB2");
+        gotoxy(10,11);
+        printf("\xB2");gotoxy(90,11);printf("\xB2");
+        gotoxy(10,12);
+        printf("\xB2");gotoxy(90,12);printf("\xB2");
+        gotoxy(10,13);
+        printf("\xB2");gotoxy(90,13);printf("\xB2");
+        gotoxy(10,14);
+        printf("\xB2");gotoxy(90,14);printf("\xB2");
+        gotoxy(10,15);
+        printf("\xB2");gotoxy(90,15);printf("\xB2");
+        gotoxy(10,16);
+        for(int i=0; i<81; i++){printf("\xB2");}
+        gotoxy(12,6);
+        printf("'Have you ever used that sword in your life while guarding doors, old man'\n");
+        gotoxy(12,7);
+        printf("Not expecting that from a newcomer the guard stood mum. Looking at me he said\n");
+        gotoxy(12,8);
+        printf("'Just giving you the proper Pinebreak welcome lad, let's have some ale.'\n");
+        gotoxy(12,10);
+        printf("You say:\n");
+        gotoxy(12,11);
+        printf("1. 'I'll pass, need to stay sober for the journey' and proceed to the armory\n");
+        gotoxy(12,12);
+        printf("2. 'Yes, also tell me what's new in Pinebreak'\n");
+        gotoxy(12,14);
+        printf("Choose an option:");                                                            
+        if(getch()=='1')
+        page2_1();
+        else
+        system("cls");                                                                       // make game here
+        mainmenu();
+        
+}
+
+
 
 //End of program
