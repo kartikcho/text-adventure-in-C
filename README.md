@@ -3,6 +3,10 @@
 
 You are a mercenary not from here, arrving in town on a contract from the thieves guild. You must take the necessary choices to assassinate the emperor or learn about the country's history and question your morals by dropping the contract altogether in this interactive story.
 
+## This project has been discontinued
+Since this was more of a learning experience than an actual project, I will not be completing the story as 
+I don't have time to spare on writing storylines. 
+
 ## Requirements
 
 GCC compiler
