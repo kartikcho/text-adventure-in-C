@@ -23,5 +23,5 @@ textadv
 
 ### Personal Note
 
-This is my first actual git project. I am trying to make a full working program in C and this is more of a learning experience.
+This is my first actual git project.
 If you wish to help me in my project by adding your own storylines and quest, please feel free to do so.
